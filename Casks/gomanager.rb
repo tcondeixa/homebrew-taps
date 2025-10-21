@@ -3,25 +3,25 @@ cask "gomanager" do
   name "gomanager"
   desc "cli to manage go binaries"
   homepage "https://github.com/tcondeixa/gomanager"
-  version "0.1.2"
+  version "0.1.3"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
   binary "gomanager"
-  bash_completion "completions/gomana.h"
+  bash_completion "completions/gomanager.bash"
   zsh_completion "completions/gomanager.zsh"
   fish_completion "completions/gomanager.fish"
 
   on_macos do
     on_intel do
       url "https://github.com/tcondeixa/gomanager/releases/download/v#{version}/gomanager-#{version}-darwin-amd64.tar.gz"
-      sha256 "a8a470283eda56d807b117011d63ecd2fca564b773e432905f70e6894bcfe7e1"
+      sha256 "0051a81dbe540f1e0363edb6b8a3da91867bb2feaae49cf81b28656a55ca11be"
     end
     on_arm do
       url "https://github.com/tcondeixa/gomanager/releases/download/v#{version}/gomanager-#{version}-darwin-arm64.tar.gz"
-      sha256 "ee27ad987dcaef8a3b71f621625c231696f7441a804fea521c5ee0bf343646f5"
+      sha256 "53e60c899a4e070468a2d480a4f7659a4b655fc5f01916433d9769c6ab3d6df1"
     end
   end
 
