@@ -3,7 +3,7 @@ cask "gomanager" do
   name "gomanager"
   desc "cli to manage go binaries"
   homepage "https://github.com/tcondeixa/gomanager"
-  version "0.1.4"
+  version "0.2.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,11 +17,11 @@ cask "gomanager" do
   on_macos do
     on_intel do
       url "https://github.com/tcondeixa/gomanager/releases/download/v#{version}/gomanager-#{version}-darwin-amd64.tar.gz"
-      sha256 "c00b089d8d62b9497ad59006c5eed6523b5f5e5cc5f5011a72785609ed06f193"
+      sha256 "660ef5322850554ae84b0faa9c38232da62e5ae6a48f1b2c999f2e7d11001de9"
     end
     on_arm do
       url "https://github.com/tcondeixa/gomanager/releases/download/v#{version}/gomanager-#{version}-darwin-arm64.tar.gz"
-      sha256 "2b23ce16f65684a08db4e490252cd654267b9b079b09c1b74c12cf970a083c8a"
+      sha256 "65a33325a5cd18b2cb7fdcf206f2bb8474a578cb140970ee1633f3819d945a74"
     end
   end
 
