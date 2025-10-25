@@ -3,7 +3,7 @@ cask "gomanager" do
   name "gomanager"
   desc "cli to manage go binaries"
   homepage "https://github.com/tcondeixa/gomanager"
-  version "0.2.0"
+  version "0.2.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,11 +17,28 @@ cask "gomanager" do
   on_macos do
     on_intel do
       url "https://github.com/tcondeixa/gomanager/releases/download/v#{version}/gomanager-#{version}-darwin-amd64.tar.gz"
-      sha256 "660ef5322850554ae84b0faa9c38232da62e5ae6a48f1b2c999f2e7d11001de9"
+      sha256 "49622686b5fa6137ae3cbb94f543c15b6292f5e94401e3b99b6965580fba6295"
     end
     on_arm do
       url "https://github.com/tcondeixa/gomanager/releases/download/v#{version}/gomanager-#{version}-darwin-arm64.tar.gz"
-      sha256 "65a33325a5cd18b2cb7fdcf206f2bb8474a578cb140970ee1633f3819d945a74"
+      sha256 "432145c6f6eda9a44fe467bfe1daa63a407117ccefd315b1773dabc04da53bc3"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      url "https://github.com/tcondeixa/gomanager/releases/download/v#{version}/gomanager-#{version}-linux-amd64.tar.gz"
+      sha256 "221666720c58ad0186296196a8f0c534323c90f44f8bb57b2ebd6b31e1ccbbf1"
+    end
+    on_arm do
+      url "https://github.com/tcondeixa/gomanager/releases/download/v#{version}/gomanager-#{version}-linux-arm64.tar.gz"
+      sha256 "075997795cf85eeb9697eeb9e6df393d52be7374857c69e6a00f528dd2f1f18b"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/gomanager"]
     end
   end
 
